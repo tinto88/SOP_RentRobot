@@ -1,23 +1,18 @@
-// import javax.print.DocFlavor.STRING;
-
-// import java.util.ArrayList; // import the ArrayList class
 public class SingleObject implements Cloneable {
-   double random = Math.random() * 49 + 1;
-   public double number = random;
-   public String color = "red";
-   public static SingleObject instance = new SingleObject();
+   public String color;
+   public static SingleObject instance = new SingleObject("blue");
 
-   private SingleObject() {
-      // this.color = c;
-   }
-
-   public Object clone() throws CloneNotSupportedException {
-      return super.clone();
+   private SingleObject(String c) {
+      this.color = c;
    }
 
    // Get the only object available
    public static SingleObject getInstance() {
       return instance;
+   }
+
+   public Object clone() throws CloneNotSupportedException {
+      return super.clone();
    }
 
    public void showMessage() {
@@ -33,13 +28,10 @@ public class SingleObject implements Cloneable {
    }
 
    public boolean isColorEqual(String c) {
-      if (color == c){
+      if (color == c) {
          return true;
       } else {
          return false;
       }
-      
-      
    }
-
 }
