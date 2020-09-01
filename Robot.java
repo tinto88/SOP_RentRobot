@@ -1,13 +1,13 @@
-public class SingleObject implements Cloneable {
+public class Robot implements Cloneable {
    public String color;
-   public static SingleObject instance = new SingleObject("blue");
+   public static Robot instance = new Robot("blue");
 
-   private SingleObject(String c) {
+   private Robot(String c) {
       this.color = c;
    }
 
    // Get the only object available
-   public static SingleObject getInstance() {
+   public static Robot getInstance() {
       return instance;
    }
 
